@@ -1,13 +1,17 @@
 {
-  "name": "uney-chat-shared-js-modules",
+  "name": "@uney/chat-shared-js-modules",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
+    "prepare": "npm run build",
+    "prepack": "npm run build",
     "build": "tsc"
   },
   "files": [
-    "/dist"
+    "dist"
   ],
   "devDependencies": {
     "@types/node": "^22.2.0",
