@@ -1,0 +1,16 @@
+{
+  "name": "uney-chat-shared-js-modules",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "/dist"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.2.0",
+    "typescript": "^5.5.4"
+  }
+}
