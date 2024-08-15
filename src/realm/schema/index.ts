@@ -1,5 +1,5 @@
-import { ApplicationMessage } from "./application-message";
 import { ApplicationGroup } from "./application-group";
+import { ApplicationMessage } from "./application-message";
 import { ApplicationUser } from "./application-user";
 
 export const REALM_SCHEMA = [
@@ -7,4 +7,4 @@ export const REALM_SCHEMA = [
   ApplicationGroup,
   ApplicationUser,
 ];
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;

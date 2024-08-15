@@ -1,4 +1,4 @@
-import Realm, { ObjectSchema } from 'realm';
+import Realm, { ObjectSchema } from "realm";
 
 export class ApplicationUser extends Realm.Object<ApplicationUser> {
   _id!: Realm.BSON.ObjectId;
@@ -8,11 +8,12 @@ export class ApplicationUser extends Realm.Object<ApplicationUser> {
   uuid!: Realm.BSON.UUID;
 
   static schema: ObjectSchema = {
-    name: 'ApplicationUser',
+    name: "ApplicationUser",
+    primaryKey: "_id",
     properties: {
-      _id: 'objectId',
-      name: 'string',
-      uuid: { type: 'uuid', indexed: true },
+      _id: "objectId",
+      name: "string",
+      uuid: { type: "uuid", indexed: true },
     },
   };
 }

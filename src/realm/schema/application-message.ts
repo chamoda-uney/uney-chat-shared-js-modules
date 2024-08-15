@@ -16,6 +16,7 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
 
   static schema: ObjectSchema = {
     name: "ApplicationMessage",
+    primaryKey: "_id",
     properties: {
       _id: "objectId",
       localMessageId: { type: "uuid", indexed: true },

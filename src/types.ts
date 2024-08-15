@@ -1,26 +1,26 @@
 export type MessageType = "text" | "image" | "audio" | "video";
 
-export interface IApplicationGroup {
+export interface IApplicationGroupDTO {
   name: string;
   uuid: string;
 }
 
-export interface IApplicationUser {
+export interface IApplicationUserDTO {
   name: string;
   uuid: string;
 }
 
-export interface IApplicationMessage {
+export interface IApplicationMessageDTO {
   version: number;
   localMessageId: string;
   globalMessageId?: string;
   type: MessageType;
-  payload: string;
+  payload: IMessagePayloadDTO;
   timestamp: number;
-  applicationUser?: IApplicationUser;
-  group: IApplicationGroup;
+  applicationUserUuid?: string;
+  groupUuid: string;
 }
 
-export interface IMessagePayload {
+export interface IMessagePayloadDTO {
   text: string;
 }
