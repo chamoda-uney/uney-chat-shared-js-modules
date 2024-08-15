@@ -1,6 +1,6 @@
 {
   "name": "@uney/chat-shared-js-modules",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -9,9 +9,7 @@
     "url": "https://github.com/chamoda-uney/uney-chat-shared-js-modules"
   },
   "scripts": {
-    "build": "tsup",
-    "prepack": "npm run build",
-    "postinstall": "npm run build"
+    "build": "tsup"
   },
   "devDependencies": {
     "@types/node": "^22.2.0",
