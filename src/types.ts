@@ -17,7 +17,7 @@ export interface IApplicationMessageDTO {
   type: MessageType;
   payload: IMessagePayloadDTO;
   timestamp: number;
-  applicationUserUuid?: string;
+  senderUuid: string;
   groupUuid: string;
 }
 
