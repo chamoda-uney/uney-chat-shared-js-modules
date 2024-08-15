@@ -10,7 +10,7 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
 
   payload!: string;
 
-  timestamp?: number;
+  timestamp!: number;
 
   applicationUser?: ApplicationUser;
 
