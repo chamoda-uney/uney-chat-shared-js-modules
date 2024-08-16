@@ -10,8 +10,6 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
 
   globalMessageId?: Realm.BSON.UUID;
 
-  payload!: MessagePayload;
-
   plainText?: string;
 
   timestamp!: number;
@@ -31,7 +29,6 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
       _id: "objectId",
       localMessageId: { type: "uuid", indexed: true },
       globalMessageId: { type: "uuid", indexed: true },
-      payload: "MessagePayload",
       plainText: {
         type: "string",
         optional: true,
@@ -42,18 +39,6 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
       group: "ApplicationGroup",
       type: { type: "string", indexed: true },
       version: "int",
-    },
-  };
-}
-
-export class MessagePayload extends Realm.Object<MessagePayload> {
-  text?: string;
-
-  static schema: Realm.ObjectSchema = {
-    name: "MessagePayload",
-    embedded: true,
-    properties: {
-      text: "string?",
     },
   };
 }
