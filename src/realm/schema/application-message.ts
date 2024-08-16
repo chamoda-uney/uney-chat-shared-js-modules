@@ -46,7 +46,7 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
   };
 }
 
-class MessagePayload extends Realm.Object<MessagePayload> {
+export class MessagePayload extends Realm.Object<MessagePayload> {
   text?: string;
 
   static schema: Realm.ObjectSchema = {
