@@ -1,7 +1,7 @@
 import Realm, { ObjectSchema } from "realm";
 import { ApplicationUser } from "./application-user";
 import { ApplicationGroup } from "./application-group";
-import { MessageType } from "../../types";
+import { MessageType } from "../../messaging";
 
 export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
   _id!: Realm.BSON.ObjectId;
@@ -22,6 +22,8 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
 
   type!: MessageType;
 
+  version!: number;
+
   static schema: ObjectSchema = {
     name: "ApplicationMessage",
     primaryKey: "_id",
@@ -39,6 +41,7 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
       sender: "ApplicationUser?",
       group: "ApplicationGroup",
       type: { type: "string", indexed: true },
+      version: "int",
     },
   };
 }

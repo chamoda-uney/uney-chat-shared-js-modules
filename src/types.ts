@@ -1,4 +1,4 @@
-export type MessageType = "text" | "image" | "audio" | "video";
+import { MessageType } from "./messaging";
 
 export interface MessageRequestDTO {
   groupUuid: string;
@@ -18,4 +18,10 @@ export interface MessageResponseDTO {
   senderClientUuid: string;
   senderUuid: string;
   messageType: string;
+}
+
+export interface MessagePayload {
+  text?: string;
+  version: number;
+  type: MessageType;
 }

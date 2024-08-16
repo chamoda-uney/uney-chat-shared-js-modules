@@ -1,10 +1,15 @@
+export enum MessageType {
+  text = "text",
+}
+
 export interface IApplicationMessage {
-  localMessageId: string;
-  globalMessageId?: string;
-  payload: IMessagePayload;
+  id: string;
+  content: IMessageContent;
   timestamp?: number;
   sender: IApplicationUser;
   group: IApplicationGroup;
+  own: boolean;
+  type: MessageType;
 }
 
 export interface IApplicationUser {
@@ -17,6 +22,6 @@ export interface IApplicationGroup {
   uuid: string;
 }
 
-export interface IMessagePayload {
+export interface IMessageContent {
   text: string;
 }
