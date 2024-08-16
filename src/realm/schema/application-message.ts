@@ -1,6 +1,7 @@
 import Realm, { ObjectSchema } from "realm";
 import { ApplicationUser } from "./application-user";
 import { ApplicationGroup } from "./application-group";
+import { MessageType } from "../../types";
 
 export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
   _id!: Realm.BSON.ObjectId;
@@ -9,13 +10,17 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
 
   globalMessageId?: Realm.BSON.UUID;
 
-  payload!: string;
+  payload!: MessagePayload;
+
+  plainText?: string;
 
   timestamp!: number;
 
   sender?: ApplicationUser;
 
   group!: ApplicationGroup;
+
+  type!: MessageType;
 
   static schema: ObjectSchema = {
     name: "ApplicationMessage",
@@ -24,10 +29,28 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
       _id: "objectId",
       localMessageId: { type: "uuid", indexed: true },
       globalMessageId: { type: "uuid", indexed: true },
-      payload: "string",
+      payload: "MessagePayload",
+      plainText: {
+        type: "string",
+        optional: true,
+        indexed: "full-text",
+      },
       timestamp: "int",
       sender: "ApplicationUser?",
       group: "ApplicationGroup",
+      type: { type: "string", indexed: true },
+    },
+  };
+}
+
+class MessagePayload extends Realm.Object<MessagePayload> {
+  text?: string;
+
+  static schema: Realm.ObjectSchema = {
+    name: "MessagePayload",
+    embedded: true,
+    properties: {
+      text: "string?",
     },
   };
 }
