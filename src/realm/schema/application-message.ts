@@ -18,6 +18,8 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
 
   group!: ApplicationGroup;
 
+  groupId!: Realm.BSON.UUID;
+
   type!: MessageType;
 
   version!: number;
@@ -37,6 +39,7 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
       timestamp: "int",
       sender: "ApplicationUser?",
       group: "ApplicationGroup",
+      groupId: { type: "objectId", indexed: true },
       type: { type: "string", indexed: true },
       version: "int",
     },
