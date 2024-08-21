@@ -6,9 +6,9 @@ import { MessageType } from "../../messaging";
 export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
   _id!: Realm.BSON.ObjectId;
 
-  localMessageId!: Realm.BSON.UUID;
+  localMessageId!: string;
 
-  globalMessageId?: Realm.BSON.UUID;
+  globalMessageId?: string;
 
   plainText?: string;
 
@@ -18,7 +18,7 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
 
   group!: ApplicationGroup;
 
-  groupId!: Realm.BSON.UUID;
+  groupId!: Realm.BSON.ObjectId;
 
   type!: MessageType;
 
@@ -29,8 +29,8 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
     primaryKey: "_id",
     properties: {
       _id: "objectId",
-      localMessageId: { type: "uuid", indexed: true },
-      globalMessageId: { type: "uuid", indexed: true },
+      localMessageId: { type: "string", indexed: true },
+      globalMessageId: { type: "string", indexed: true },
       plainText: {
         type: "string",
         optional: true,

@@ -5,7 +5,7 @@ export class ApplicationUser extends Realm.Object<ApplicationUser> {
 
   name!: string;
 
-  uuid!: Realm.BSON.UUID;
+  uuid!: string;
 
   static schema: ObjectSchema = {
     name: "ApplicationUser",
@@ -13,7 +13,7 @@ export class ApplicationUser extends Realm.Object<ApplicationUser> {
     properties: {
       _id: "objectId",
       name: "string",
-      uuid: { type: "uuid", indexed: true },
+      uuid: { type: "string", indexed: true },
     },
   };
 }
