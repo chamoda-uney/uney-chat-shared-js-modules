@@ -30,7 +30,7 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
     properties: {
       _id: "objectId",
       localMessageId: { type: "string", indexed: true },
-      globalMessageId: { type: "string", indexed: true },
+      globalMessageId: { type: "string", indexed: true, optional: true },
       plainText: {
         type: "string",
         optional: true,
