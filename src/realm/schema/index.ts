@@ -7,4 +7,4 @@ export const REALM_SCHEMA = [
   ApplicationGroup,
   ApplicationUser,
 ];
-export const SCHEMA_VERSION = 8;
+export const SCHEMA_VERSION = 9;
