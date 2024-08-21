@@ -22,8 +22,6 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
 
   type!: MessageType;
 
-  version!: number;
-
   static schema: ObjectSchema = {
     name: "ApplicationMessage",
     primaryKey: "_id",
@@ -41,7 +39,6 @@ export class ApplicationMessage extends Realm.Object<ApplicationMessage> {
       group: "ApplicationGroup",
       groupId: { type: "objectId", indexed: true },
       type: { type: "string", indexed: true },
-      version: "int",
     },
   };
 }
