@@ -6,6 +6,8 @@ export * from "./types";
 
 const MESSAGE_VERSION = 1;
 
+import Realm from "realm";
+
 //currently we use only text
 export const composeMessagePayload = (text: string): string => {
   const payload: MessagePayload = {
@@ -31,8 +33,10 @@ export const convertToIApplicationMessage = (
     },
     timestamp: message.timestamp,
     sender: {
-      name: message.sender!.name,
-      uuid: message.sender!.uuid.toString(),
+      name: message.sender ? message.sender.name : "Unknown sender",
+      uuid: message.sender
+        ? message.sender.uuid.toString()
+        : new Realm.BSON.UUID().toString(),
     },
     group: {
       name: message.group.name,
