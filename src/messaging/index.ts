@@ -42,7 +42,9 @@ export const convertToIApplicationMessage = (
       name: message.group.name,
       uuid: message.group.uuid.toString(),
     },
-    own: message.sender!.uuid.toString() === ownUserUuid,
+    own: message.sender
+      ? message.sender.uuid.toString() === ownUserUuid
+      : false, //message.sender!.uuid.toString() === ownUserUuid,
     type: message.type,
   };
 };
