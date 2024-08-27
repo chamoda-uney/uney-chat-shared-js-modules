@@ -33,12 +33,16 @@ export const convertToIApplicationMessage = (
     },
     timestamp: message.timestamp,
     sender: {
+      id: message.sender
+        ? message.sender._id.toString()
+        : new Realm.BSON.ObjectId().toString(),
       name: message.sender ? message.sender.name : "Unknown sender",
       uuid: message.sender
         ? message.sender.uuid.toString()
         : new Realm.BSON.UUID().toString(),
     },
     group: {
+      id: message.group._id.toString(),
       name: message.group.name,
       uuid: message.group.uuid.toString(),
     },

@@ -13,11 +13,13 @@ export interface IApplicationMessage {
 }
 
 export interface IApplicationUser {
+  id: string;
   name: string;
   uuid: string;
 }
 
 export interface IApplicationGroup {
+  id: string;
   name: string;
   uuid: string;
 }
