@@ -1,9 +1,6 @@
 import Realm, { ObjectSchema } from "realm";
 
-export class ApplicationUserGroup extends Realm.Object<
-  ApplicationUserGroup,
-  "_id" | "_userId" | "_groupId"
-> {
+export class ApplicationUserGroup extends Realm.Object<ApplicationUserGroup> {
   _id!: string;
 
   _userId!: Realm.BSON.ObjectId;
