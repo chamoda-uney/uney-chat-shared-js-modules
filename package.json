@@ -1,6 +1,6 @@
 {
   "name": "@uney/chat-shared-js-modules",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -17,6 +17,6 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "realm": "^12.12.1"
+    "realm": "^12.13.1"
   }
 }
