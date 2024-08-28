@@ -27,3 +27,19 @@ export interface IApplicationGroup {
 export interface IMessageContent {
   text: string;
 }
+
+export type LatestMessageParams = {
+  id: string;
+  content: IMessageContent;
+  timestamp?: number;
+  sender: IApplicationUser;
+} | null;
+
+export type GroupWithLatestMessageParams = {
+  id: string;
+  name: string;
+  uuid: string;
+  createdAt: number;
+  updatedAt: number;
+  latestMessage?: LatestMessageParams;
+};
