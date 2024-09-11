@@ -2,7 +2,7 @@ export enum MessageType {
   text = "text",
 }
 
-export interface IApplicationMessage {
+export type IApplicationMessage = {
   id: string;
   content: IMessageContent;
   timestamp?: number;
@@ -10,23 +10,29 @@ export interface IApplicationMessage {
   group: IApplicationGroup;
   own: boolean;
   type: MessageType;
-}
+};
 
-export interface IApplicationUser {
+export type IApplicationUser = {
   id: string;
   name: string;
   uuid: string;
-}
+};
 
-export interface IApplicationGroup {
+export type CurrentUserParams = {
+  id: string;
+  uuid: string;
+  name: string;
+};
+
+export type IApplicationGroup = {
   id: string;
   name: string;
   uuid: string;
-}
+};
 
-export interface IMessageContent {
+export type IMessageContent = {
   text: string;
-}
+};
 
 export type LatestMessageParams = {
   id: string;
@@ -41,5 +47,10 @@ export type GroupWithLatestMessageParams = {
   uuid: string;
   createdAt: number;
   updatedAt: number;
-  latestMessage?: LatestMessageParams;
+  latestMessage: LatestMessageParams;
+};
+
+export type CreateGroupAndAddUsersParams = {
+  name: string;
+  userIds: string[];
 };

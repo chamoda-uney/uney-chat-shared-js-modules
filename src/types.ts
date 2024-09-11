@@ -1,14 +1,14 @@
 import { MessageType } from "./messaging";
 
-export interface MessageRequestDTO {
+export type MessageRequestDTO = {
   groupUuid: string;
   clientMessageId: string;
   payload: string;
   messageType: string;
   senderUuid: string;
-}
+};
 
-export interface MessageResponseDTO {
+export type MessageResponseDTO = {
   payload: string;
   timestamp: number;
   recipientClientUuid: string;
@@ -18,10 +18,10 @@ export interface MessageResponseDTO {
   senderClientUuid: string;
   senderUuid: string;
   messageType: string;
-}
+};
 
-export interface MessagePayload {
+export type MessagePayload = {
   text?: string;
   version: number;
   type: MessageType;
-}
+};
